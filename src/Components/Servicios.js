@@ -110,9 +110,8 @@ export default function Servicios(){
         lead="Operamos soluciones de logística integral: almacenaje, preparación de pedidos y distribución, con visibilidad y control en cada etapa."
         bullets={[
           "Almacenaje seguro y flexible",
-          "Picking & packing de alta precisión",
-          "Integración con tu ecommerce/ERP",
-          "SLA y trazabilidad en tiempo real",
+          "Recogida y distribución de alta precisión",
+          "Trazabilidad en tiempo real",
         ]}
       />
 
@@ -122,7 +121,7 @@ export default function Servicios(){
         image={imgMudanzas}
         lead="Mudanzas rápidas, seguras y sin complicaciones. Cuidamos cada pieza como si fuera nuestra para que solo te ocupes de disfrutar tu nuevo destino."
         bullets={[
-          "Embalaje profesional (sin personas en imagen)",
+          "Embalaje profesional",
           "Protección de muebles y electrodomésticos",
           "Cobertura en todo Cuyo",
           "Opciones puerta a puerta",
@@ -133,7 +132,7 @@ export default function Servicios(){
         id="transporte"
         title="Transporte"
         image={imgTransporte}
-        lead="Red propia en Cuyo y conexiones nacionales. Entregas puntuales con estándares de seguridad y un equipo que responde."
+        lead="Red propia en Cuyo. Entregas puntuales con estándares de seguridad y un equipo que responde."
         bullets={[
           "Flota moderna y monitoreada",
           "Transporte de Medicamentos",
@@ -147,10 +146,10 @@ export default function Servicios(){
         id="ecommerce"
         title="E-commerce"
         image={imgEcommerce}
-        lead="Soluciones a medida para tu tienda online: almacenaje, preparación cgion experiencia de entrega que fideliza."
+        lead="Soluciones a medida para tu tienda online: almacenaje y entrega que fideliza."
         bullets={[
-          "Integración con tu plataforma (Shopify, Woo, etc.)",
-          "Preparación en 24h y etiquetas automáticas",
+          
+          "Preparación en 24h",
           "Gestión de devoluciones",
           "Reportes y analítica de operaciones",
         ]}
