@@ -67,7 +67,7 @@ const Logo = styled.img`
   padding: 25px; 
   padding-top:10px;
   padding-bottom:10px;
-  @media (max-width: 80%){ height: 88px; }
+  @media (max-width: 70%){ height: 50px; }
 `;
 
 const Actions = styled.div`

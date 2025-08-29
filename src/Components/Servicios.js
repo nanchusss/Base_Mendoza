@@ -93,7 +93,7 @@ function ServiceBlock({ id, title, image, lead, bullets=[] }) {
             {bullets.map((b)=>(<li key={b}>{b}</li>))}
           </Bullets>
         )}
-        <CTA href="#contacto">Quiero saber más</CTA>
+       
       </Details>
       <Divider />
     </section>
