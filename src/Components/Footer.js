@@ -69,8 +69,8 @@ export default function Footer() {
       <Inner>
         <Address>
           <strong>Base Mendoza</strong><br />
-          Av. San Martín 1234<br />
-          Ciudad de Mendoza, Argentina
+          Los Cedros 618, Godoy Cruz<br />
+          Mendoza, Argentina
         </Address>
 
         <Social>

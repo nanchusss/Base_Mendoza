@@ -12,7 +12,7 @@ import imgAlmacenaje from "../Images/almacenaje.png";        // NUEVO (o reempla
 const Section = styled.section`
   width: 100%;
   background: ${(p) => p.theme.colors.neutral};
-  margin: 40px;
+  margin: 0px;
   margin-bottom: 80px;
   padding-block: 120px;   /* 👈 aire vertical */
 `;

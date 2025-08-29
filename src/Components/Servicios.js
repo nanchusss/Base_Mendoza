@@ -147,7 +147,7 @@ export default function Servicios(){
         id="ecommerce"
         title="E-commerce"
         image={imgEcommerce}
-        lead="Soluciones a medida para tu tienda online: almacenaje, preparación con experiencia de entrega que fideliza."
+        lead="Soluciones a medida para tu tienda online: almacenaje, preparación cgion experiencia de entrega que fideliza."
         bullets={[
           "Integración con tu plataforma (Shopify, Woo, etc.)",
           "Preparación en 24h y etiquetas automáticas",
