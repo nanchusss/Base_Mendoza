@@ -9,7 +9,7 @@ export const theme = {
     border:   "#E5E7EB",
     white:    "#FFFFFF",
   },
-  radius: "12px",
+  radius: "10px",
   shadow: "0 8px 30px rgba(0,0,0,0.06)",
   maxw: "1200px",
 };

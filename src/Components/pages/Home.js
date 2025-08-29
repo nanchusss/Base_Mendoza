@@ -18,7 +18,7 @@ export default function Home (){
       <VanShowcase/>
       
       <Pasarela/>
-      <VideoEmbed/>
+     
       
       <WhatsAppFab/>
     </>

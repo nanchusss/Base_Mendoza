@@ -6,6 +6,7 @@ const Grid = styled.div`
   display:grid; gap:16px; grid-template-columns:repeat(4,1fr);
   @media(max-width:900px){ grid-template-columns:repeat(2,1fr); }
   @media(max-width:520px){ grid-template-columns:1fr; }
+  padding-block: 80px;   /* 👈 aire vertical */
 `;
 const Card = styled.div`
   background:#fff; border:1px solid ${p=>p.theme.colors.border};

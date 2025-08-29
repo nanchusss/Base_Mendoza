@@ -14,6 +14,7 @@ const Section = styled.section`
   background: ${(p) => p.theme.colors.neutral};
   margin: 40px;
   margin-bottom: 80px;
+  padding-block: 120px;   /* 👈 aire vertical */
 `;
 
 const Strip = styled.div`

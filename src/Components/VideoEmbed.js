@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const Box = styled.section` max-width:900px; margin:40px auto; padding:0 20px; `;
+const Box = styled.section` max-width:900px; margin:80px auto; padding:0 20px; `;
 const Frame = styled.div` aspect-ratio:16/9; border-radius:16px; overflow:hidden; `;
 
 export default function VideoEmbed(){

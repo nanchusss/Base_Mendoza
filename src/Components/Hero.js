@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 const Section = styled.section`
   max-width:${p=>p.theme.maxw}; margin:0 auto; padding:64px 20px;
+  
   display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:center;
   @media(max-width:900px){ grid-template-columns:1fr; text-align:center; }
 `;

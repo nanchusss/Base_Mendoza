@@ -198,7 +198,7 @@ export default function VanShowCase() {
 
           <h2>Flota urbana con <span style={{color: theme.colors.primary}}>precisión</span> y <span style={{color: theme.colors.secondary}}>velocidad</span></h2>
           <p>
-            Integrá tu operativa con vans listas para última milla y media distancia.
+            Integrá nuestra flora en tu operativa diaria y media distancia.
             Tecnología, seguridad y eficiencia en un mismo servicio.
           </p>
 

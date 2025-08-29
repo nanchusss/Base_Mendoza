@@ -59,7 +59,8 @@ const Brand = styled(Link)`
 `;
 
 const Logo = styled.img`
-  height: 72px; width: auto; object-fit: contain;
+  height: 142px; width: auto; object-fit: contain;
+  padding: 15px; 
   @media (max-width: 720px){ height: 48px; }
 `;
 

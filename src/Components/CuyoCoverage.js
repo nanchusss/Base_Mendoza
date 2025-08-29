@@ -7,6 +7,7 @@ const Wrap = styled.section`
   margin: 40px 0 24px;
   background: linear-gradient(135deg, #0b2b4a 0%, #0d3b63 60%, #0b2b4a 100%);
   color: #fff;
+  padding-block: 50px;   /* 👈 aire vertical */
 `;
 
 const Inner = styled.div`
