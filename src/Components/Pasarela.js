@@ -96,8 +96,8 @@ export default function Pasarela() {
     { img: imgTransporte,   title: "Transporte",                 desc: "Cobertura nacional e internacional. Rápido y eficiente.",  href: "#transporte" },
     { img: imgMudanzas,     title: "Mudanzas",                   desc: "Mudanzas seguras y con tranquilidad garantizada.",        href: "#mudanzas" },
     { img: imgLogistica,    title: "Logística Integral",         desc: "Picking, packing, cross-docking y gestión de stock.",     href: "#logistica" },
-    { img: imgMedicamentos, title: "Transporte de medicamentos", desc: "Cadena de frío, trazabilidad y normas vigentes.",         href: "#medicamentos" },
-    { img: imgAlmacenaje,   title: "Almacenaje",                 desc: "Depósitos flexibles y seguros, según tu demanda.",        href: "#almacenaje" },
+    { img: imgMedicamentos, title: "Transporte de medicamentos", desc: "Trazabilidad y normas vigentes.",         href: "#medicamentos" },
+    { img: imgAlmacenaje,   title: "Almacenaje",                 desc: "Logística avanzada",        href: "#almacenaje" },
   ];
 
   return (

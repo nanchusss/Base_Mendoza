@@ -199,7 +199,7 @@ export default function VanShowCase() {
           <h2>Flota urbana con <span style={{color: theme.colors.primary}}>precisión</span> y <span style={{color: theme.colors.secondary}}>velocidad</span></h2>
           <p>
             Integrá nuestra flora en tu operativa diaria y media distancia.
-            Tecnología, seguridad y eficiencia en un mismo servicio.
+            Seguridad y eficiencia en un mismo servicio.
           </p>
 
           <Actions>
@@ -210,7 +210,7 @@ export default function VanShowCase() {
 >
   Solicitar presupuesto
 </PrimaryBtn>
-            <GhostBtn href="#video">Ver cómo funciona</GhostBtn>
+            
           </Actions>
         </ShowCaseText>
 
