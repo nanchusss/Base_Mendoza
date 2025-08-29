@@ -36,8 +36,10 @@ const Social = styled.div`
 const Bar = styled.header`
   position: sticky; top: 0; z-index: 80;
   backdrop-filter: blur(8px);
+  padding: 40px;
   background: rgba(255,255,255,.92);
   border-bottom: 1px solid ${(p) => p.theme.colors.border};
+  
 `;
 
 const Inner = styled.nav`
@@ -58,10 +60,14 @@ const Brand = styled(Link)`
   padding: 6px 0;
 `;
 
+
+
 const Logo = styled.img`
-  height: 142px; width: auto; object-fit: contain;
-  padding: 15px; 
-  @media (max-width: 720px){ height: 48px; }
+  height: 170px; width: auto; object-fit: contain;
+  padding: 25px; 
+  padding-top:10px;
+  padding-bottom:10px;
+  @media (max-width: 80%){ height: 88px; }
 `;
 
 const Actions = styled.div`
