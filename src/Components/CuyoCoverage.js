@@ -145,9 +145,11 @@ export default function CuyoCoverage(){
             rápido, confiable y con visibilidad total.
           </P>
           <Ctas>
-            <Btn href="#contacto">Hablar con Ventas</Btn>
-            <Btn variant="ghost" href="#delegaciones">Ver delegaciones</Btn>
+            <Btn href="https://wa.me/542616490621">Hablar con Ventas</Btn>
+            
           </Ctas>
+          
+
         </Copy>
 
         <MapCard aria-label="Mapa de Cuyo con delegaciones">

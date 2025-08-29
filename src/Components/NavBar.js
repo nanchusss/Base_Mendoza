@@ -1,6 +1,8 @@
+// src/components/Navbar.js
+import React, { useState } from "react";
 import styled from "styled-components";
-import { FaInstagram, FaFacebook, FaTiktok, FaWhatsapp } from "react-icons/fa";
-import { Link } from "react-router-dom";  // 👈 para navegar entre componentes
+import { FaInstagram, FaFacebook, FaTiktok, FaWhatsapp, FaBars, FaTimes } from "react-icons/fa";
+import { Link } from "react-router-dom";
 import logo from "../Images/logo.png";
 
 const TRACKING_URL = "https://tu-pagina-de-tracking.com";
@@ -19,34 +21,20 @@ const TopInner = styled.div`
   display: flex; align-items: center; justify-content: flex-end;
 `;
 const Social = styled.div`
-  display: flex; align-items: center; gap: 16px;
+  display: flex; align-items: center; gap: 12px;
   a {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px; height: 32px;
-    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px; border-radius: 50%;
     color: ${(p) => p.theme.colors.white};
     background: ${(p) => p.theme.colors.primary};
     transition: background .2s ease, transform .2s ease;
   }
-  a:hover {
-    background: ${(p) => p.theme.colors.secondary};
-    transform: scale(1.1);
-  }
-`;
-const TrackBtn = styled.a`
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 10px 14px; border-radius: 999px;
-  margin-right: 20px;
-  background: ${(p) => p.theme.colors.secondary};
-  color: #fff; font-weight: 700;
-  &:hover { filter: brightness(.95); }
+  a:hover { background: ${(p) => p.theme.colors.secondary}; transform: scale(1.1); }
 `;
 
 /* ------- Navbar principal ------- */
 const Bar = styled.header`
-  position: sticky; top: 0; z-index: 50;
+  position: sticky; top: 0; z-index: 80;
   backdrop-filter: blur(8px);
   background: rgba(255,255,255,.92);
   border-bottom: 1px solid ${(p) => p.theme.colors.border};
@@ -55,43 +43,43 @@ const Bar = styled.header`
 const Inner = styled.nav`
   max-width: ${(p) => p.theme.maxw};
   margin: 0 auto;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  height: 110px;
+  padding: 0 20px;
+  display: flex; align-items: center; justify-content: space-between;
+
+  @media (max-width: 720px){
+    height: 76px;
+  }
 `;
 
 const Brand = styled(Link)`
-  display: flex;
-  align-items: center;
+  display: flex; align-items: center;
   height: 100%;
-  padding: 6px;
+  padding: 6px 0;
 `;
 
 const Logo = styled.img`
-  height: 100%;
-  width: auto;
-  object-fit: contain;
+  height: 72px; width: auto; object-fit: contain;
+  @media (max-width: 720px){ height: 48px; }
 `;
 
 const Actions = styled.div`
   display: flex; gap: 16px; align-items: center;
   a { color: ${(p) => p.theme.colors.text}; }
+  @media (max-width: 720px){ display: none; } /* se oculta en mobile */
 `;
 
 const LinkItem = styled(Link)`
   padding: 10px 8px; border-radius: 10px; font-weight: 500;
   transition: background .2s ease;
-  font-size: 20px;
+  font-size: 18px;
   &:hover { background: ${(p) => p.theme.colors.neutral}; }
-  @media (max-width: 720px){ display: none; }
 `;
 
 const ExternalLink = styled.a`
   padding: 10px 8px; border-radius: 10px; font-weight: 500;
   transition: background .2s ease;
-  font-size: 20px;
-  color: ${(p) => p.theme.colors.text};
+  font-size: 18px; color: ${(p) => p.theme.colors.text};
   &:hover { background: ${(p) => p.theme.colors.neutral}; }
 `;
 
@@ -108,17 +96,88 @@ const Btn = styled(Link)`
   }
 `;
 
+/* ------- Botón hamburguesa (mobile) ------- */
+const MenuToggle = styled.button`
+  display: none;
+  @media (max-width: 720px){
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 42px; height: 42px; border-radius: 12px;
+    border: 1px solid ${(p) => p.theme.colors.border};
+    background: ${(p) => p.theme.colors.white};
+    color: ${(p) => p.theme.colors.text};
+  }
+`;
+
+/* ------- Menú móvil desplegable ------- */
+const MobileMenuBackdrop = styled.div`
+  position: fixed; inset: 0; z-index: 90;
+  background: rgba(0,0,0,.35);
+  opacity: ${(p) => (p.open ? 1 : 0)};
+  pointer-events: ${(p) => (p.open ? "auto" : "none")};
+  transition: opacity .2s ease;
+`;
+
+const MobileMenu = styled.aside`
+  position: fixed; top: 0; right: 0; z-index: 95;
+  width: min(84vw, 360px); height: 100%;
+  background: #fff; border-left: 1px solid ${(p) => p.theme.colors.border};
+  box-shadow: -10px 0 30px rgba(0,0,0,.08);
+  transform: translateX(${(p) => (p.open ? "0%" : "100%")});
+  transition: transform .25s ease;
+  display: flex; flex-direction: column;
+`;
+
+const MobileHeader = styled.div`
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px; border-bottom: 1px solid ${(p) => p.theme.colors.border};
+`;
+
+const CloseBtn = styled.button`
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 40px; height: 40px; border-radius: 10px;
+  border: 1px solid ${(p) => p.theme.colors.border};
+  background: ${(p) => p.theme.colors.white};
+`;
+
+const MobileLinks = styled.div`
+  display: grid; gap: 6px; padding: 12px 12px 20px;
+
+  a {
+    display: block; padding: 14px 12px; border-radius: 10px;
+    font-size: 18px; color: ${(p) => p.theme.colors.text};
+    text-decoration: none;
+    border: 1px solid ${(p) => p.theme.colors.border};
+    background: ${(p) => p.theme.colors.white};
+  }
+  a:hover { background: ${(p) => p.theme.colors.neutral}; }
+`;
+
+const MobileSocial = styled.div`
+  margin-top: auto; padding: 16px; border-top: 1px solid ${(p) => p.theme.colors.border};
+  display: flex; gap: 12px;
+  a{
+    display: inline-flex; width: 36px; height: 36px; border-radius: 50%;
+    align-items: center; justify-content: center;
+    background: ${(p) => p.theme.colors.primary}; color: #fff;
+  }
+`;
+
+/* ------- Componente ------- */
 export default function Navbar(){
+  const [open, setOpen] = useState(false);
+
+  const close = () => setOpen(false);
+
   return (
     <>
       <TopStrip>
         <TopInner>
-          {/* <TrackBtn href={TRACKING_URL} target="_blank" rel="noreferrer">Rastrear envío</TrackBtn> */}
+          {/* <a href={TRACKING_URL} target="_blank" rel="noreferrer" style={{color:'#fff', fontWeight:700}}>Rastrear envío</a> */}
           <Social>
-            <a href="https://instagram.com/tu_cuenta" target="_blank" rel="noreferrer"><FaInstagram size={16} /></a>
-            <a href="https://facebook.com/tu_pagina"  target="_blank" rel="noreferrer"><FaFacebook size={16} /></a>
-            <a href="https://tiktok.com/@tu_cuenta"   target="_blank" rel="noreferrer"><FaTiktok size={16} /></a>
-            <a href="https://wa.me/542616490621"     target="_blank" rel="noreferrer"><FaWhatsapp size={16} /></a>
+            <a href="https://instagram.com/tu_cuenta" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram size={16} /></a>
+            <a href="https://facebook.com/tu_pagina"  target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebook size={16} /></a>
+            <a href="https://tiktok.com/@tu_cuenta"   target="_blank" rel="noreferrer" aria-label="TikTok"><FaTiktok size={16} /></a>
+            <a href="https://wa.me/542616490621"      target="_blank" rel="noreferrer" aria-label="WhatsApp"><FaWhatsapp size={16} /></a>
           </Social>
         </TopInner>
       </TopStrip>
@@ -126,29 +185,66 @@ export default function Navbar(){
       <Bar>
         <Inner>
           <Brand to="/" aria-label="Inicio">
-            <Logo src={logo} alt="Logo" />
+            <Logo src={logo} alt="Base Mendoza Logística" />
           </Brand>
 
+          {/* Menú escritorio */}
           <Actions>
-            {/* Navega a otro componente */}
             <LinkItem to="/servicios">Servicios</LinkItem>
-
-            {/* Link externo a Google Maps */}
             <ExternalLink
               href="https://www.google.com/maps?q=Los+Cedros+618+Godoy+Cruz+Mendoza"
-              target="_blank"
-              rel="noreferrer"
+              target="_blank" rel="noreferrer"
             >
               Dirección
             </ExternalLink>
-
-            {/* Navega a otro componente */}
             <LinkItem to="/sobrenosotros">Sobre Nosotros</LinkItem>
-<LinkItem to="/contacto">Contacto</LinkItem>
-            
+            <LinkItem to="/contacto">Contacto</LinkItem>
+            <Btn to="/contacto" className="primary">Solicitar presupuesto</Btn>
           </Actions>
+
+          {/* Botón hamburguesa */}
+          <MenuToggle
+            aria-label="Abrir menú"
+            aria-expanded={open}
+            onClick={() => setOpen(true)}
+          >
+            <FaBars />
+          </MenuToggle>
         </Inner>
       </Bar>
+
+      {/* Menú móvil */}
+      <MobileMenuBackdrop open={open} onClick={close} />
+      <MobileMenu open={open} aria-hidden={!open}>
+        <MobileHeader>
+          <img src={logo} alt="Base Mendoza Logística" style={{height: 36}} />
+          <CloseBtn aria-label="Cerrar menú" onClick={close}><FaTimes /></CloseBtn>
+        </MobileHeader>
+
+        <MobileLinks onClick={close}>
+          <Link to="/servicios">Servicios</Link>
+          <a href="https://www.google.com/maps?q=Los+Cedros+618+Godoy+Cruz+Mendoza" target="_blank" rel="noreferrer">Dirección</a>
+          <Link to="/sobrenosotros">Sobre Nosotros</Link>
+          <Link to="/contacto">Contacto</Link>
+          <Link to="/contacto" style={{
+            background: "#00AEEF", color:"#fff", borderColor:"transparent", fontWeight:700, textAlign:"center"
+          }}>
+            Solicitar presupuesto
+          </Link>
+          <a href="https://wa.me/542616490621" target="_blank" rel="noreferrer" style={{
+            borderColor:"transparent", background:"#FF7A00", color:"#fff", textAlign:"center", fontWeight:700
+          }}>
+            WhatsApp
+          </a>
+        </MobileLinks>
+
+        <MobileSocial>
+          <a href="https://instagram.com/tu_cuenta" target="_blank" rel="noreferrer"><FaInstagram /></a>
+          <a href="https://facebook.com/tu_pagina"  target="_blank" rel="noreferrer"><FaFacebook /></a>
+          <a href="https://tiktok.com/@tu_cuenta"   target="_blank" rel="noreferrer"><FaTiktok /></a>
+          <a href="https://wa.me/542616490621"      target="_blank" rel="noreferrer"><FaWhatsapp /></a>
+        </MobileSocial>
+      </MobileMenu>
     </>
   );
 }

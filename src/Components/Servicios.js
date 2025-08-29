@@ -136,6 +136,7 @@ export default function Servicios(){
         lead="Red propia en Cuyo y conexiones nacionales. Entregas puntuales con estándares de seguridad y un equipo que responde."
         bullets={[
           "Flota moderna y monitoreada",
+          "Transporte de Medicamentos",
           "Rutas optimizadas Mendoza–San Juan–San Luis",
           "Carga fraccionada y dedicada",
           "Soporte y seguimiento proactivo",

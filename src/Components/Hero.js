@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Imagen from "../Images/hero.png";
+import Imagen from "../Images/sintesis.png";
 import { Link } from "react-router-dom";
 
 const Section = styled.section`
