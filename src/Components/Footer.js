@@ -74,9 +74,7 @@ export default function Footer() {
         </Address>
 
         <Social>
-          <a href="https://instagram.com/tu_cuenta" target="_blank" rel="noreferrer"><FaInstagram size={18} /></a>
-          <a href="https://facebook.com/tu_pagina" target="_blank" rel="noreferrer"><FaFacebook size={18} /></a>
-          <a href="https://tiktok.com/@tu_cuenta" target="_blank" rel="noreferrer"><FaTiktok size={18} /></a>
+          <a href="https://instagram.com/base.mendoza" target="_blank" rel="noreferrer"><FaInstagram size={18} /></a>
           <a href="https://wa.me/5491112345678" target="_blank" rel="noreferrer"><FaWhatsapp size={18} /></a>
         </Social>
       </Inner>
