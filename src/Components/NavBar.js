@@ -181,9 +181,8 @@ export default function Navbar(){
         <TopInner>
           {/* <a href={TRACKING_URL} target="_blank" rel="noreferrer" style={{color:'#fff', fontWeight:700}}>Rastrear envío</a> */}
           <Social>
-            <a href="https://instagram.com/tu_cuenta" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram size={16} /></a>
-            <a href="https://facebook.com/tu_pagina"  target="_blank" rel="noreferrer" aria-label="Facebook"><FaFacebook size={16} /></a>
-            <a href="https://tiktok.com/@tu_cuenta"   target="_blank" rel="noreferrer" aria-label="TikTok"><FaTiktok size={16} /></a>
+            <a href="https://instagram.com/base.mendoza" target="_blank" rel="noreferrer" aria-label="Instagram"><FaInstagram size={16} /></a>
+        
             <a href="https://wa.me/542616490621"      target="_blank" rel="noreferrer" aria-label="WhatsApp"><FaWhatsapp size={16} /></a>
           </Social>
         </TopInner>
